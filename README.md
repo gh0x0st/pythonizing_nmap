@@ -517,7 +517,7 @@ Service scanning is something that will catch inexperienced pen testers off guar
 
 If you come across any server that uses ports 515,1028,1068,1503,1720,1935,2040,3388,3389 then nmap, with the default options, will eventually use the TerminalServer probes. Here's the problem. If you have a client that uses a Cisco IPS for example that sits in front of that server and it sees `\x03\0\0\x0b\x06\xe0\0\0\0\0\0|` destined to any port that isn't 3389, then it's going to flag you thinking you're trying to connect to RDP on a non-standard port. Because of this as a rule of thumb I put a hard stop on letting nmap try to service probe anything on those ports so I block those off the bat in the config file on line 29 `Exclude T:9100-9107,T:515,T:1028,T:1068,T:1503,T:1720,T:1935,T:2040,T:3388`.
 
-_NOTE: There is a `--exclude-ports` parameter but I like to show people that they configurable options within the config files_
+_NOTE: There is a `--exclude-ports` parameter but I like to show people that there are configurable options within the config files_
 
 The problem doesn't stop there though. If you run into a port that nmap cannot figure out, it will try every possible probe up the intensity level, which by default is 7 (https://nmap.org/book/man-version-detection.html). If you look at the snippet below, there is another terminal server probe that is set to rarity 7, so those probes would be included. To prevent that from happening, I set my intensity version to 5 or 6 via `--version-intensity` depending on how paranoid I am.
 
@@ -577,7 +577,7 @@ if __name__ == '__main__':
 
 ### Stage 4 - OS Detection
 
-I'm a bit torn on using the OS discovery scan over the internet. Sometimes it does not provide me anything useful and other times it provides me a gold mine with unsupported operating systems. I will run this scan just to see and will try to verify through other types of enumeration, such as identifying os requirements for the running software if I'm able. If I'm on the network probing a device, I'll typically use this all the time but over the internet it all depends on if I have anything else work from first.
+I'm a bit torn on using the OS discovery scan over the internet. Sometimes it does not provide me anything useful and other times it provides me a gold mine with unsupported operating systems. I will run this scan just to see and will try to verify through other types of enumeration, such as identifying os requirements for the running software if I'm able. If I'm on the network probing a device, I'll typically use this all the time if I'm on the internal network but over the internet it all depends on if I have anything else to work off from first.
 
 ```PYTHON
 #!/usr/bin/python3
