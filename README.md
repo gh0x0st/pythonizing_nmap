@@ -1244,10 +1244,10 @@ if __name__ == '__main__':
 
 | IP | Port | CommonName | IssuerCommon | CertStart | CertEnd
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 192.168.0.133|443|stay.offsec.com|DigiCert Global CA G2|2020-05-06|2021-05-06
-| 192.168.0.134|443|off.offsec.com|DigiCert Global CA G2|2019-11-06|2020-11-05
-| 192.168.0.135|443|ronin's.offsec.com|DigiCert Global CA G2|2020-05-04|2021-05-05
-| 192.168.0.136|443|lawn.offsec.com|DigiCert Global CA G2|2019-11-15|2020-11-14
+| 192.168.0.133|443|stay.example.com|DigiCert Global CA G2|2020-05-06|2021-05-06
+| 192.168.0.134|443|off.example.com|DigiCert Global CA G2|2019-11-06|2020-11-05
+| 192.168.0.135|443|ronins.example.com|DigiCert Global CA G2|2020-05-04|2021-05-05
+| 192.168.0.136|443|lawn.example.com|DigiCert Global CA G2|2019-11-15|2020-11-14
 
 ```PYTHON
 #!/usr/bin/python3
