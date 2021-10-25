@@ -1040,7 +1040,7 @@ if __name__ == '__main__':
     main()
 ```
 
-### Detected Hosts With Guessed Operation Systems
+### Detected Hosts With Guessed Operating Systems
 
 | IP | Port
 | :--- | :---|
