@@ -60,7 +60,9 @@ One of my favorite features of Nmap is the ability to output our scan results to
 
 ### Parse for Live Hosts
 
-The first case where this will be useful for us is to determine which hosts from our host discovery probes are considered up. To facilitate this task in python we'll take advantage of the `xml.etree.ElementTree` (https://docs.python.org/3/library/xml.etree.elementtree.html) library. Our helper function will take in the path of an XML file we designate and parse out the hosts that are flagged as being 'up'. 
+The first case where this will be useful for us is to determine which hosts from our host discovery probes are considered up. To facilitate this task in python we'll take advantage of the `xml.etree.ElementTree` (https://docs.python.org/3/library/xml.etree.elementtree.html) library. Take a look at the note in https://github.com/gh0x0st/pythonizing_nmap/blob/main/XML%20Parser%20Scripts/README.md for an alternate library if you do not free comfortble with using ElementTree.
+
+Our helper function will take in the path of an XML file we designate and parse out the hosts that are flagged as being 'up'. 
 
 Since I use all possible discovery probes I use `parseDiscoverXml()` to take in the results from all the Xml files, then I use a second helper function to remove any duplicates and output them space delimited so I can use those at the target input values for future Nmap calls.
 
